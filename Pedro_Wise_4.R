@@ -9,16 +9,15 @@ Pedro_Wise_4 <- function(
     ganho = c("treino","teste","ambos"),
     pvalor = FALSE,
     orientacao = TRUE,
-    check_transformacao = FALSE,
-    forward_simples_1 = TRUE,
-    transform_simples_1 = TRUE,
-    backward_simples_1 = TRUE,
-    forward_duplo_2 = TRUE,
-    transform_simples_2 = TRUE,
-    backward_simples_2 = TRUE,
-    forward_triplo_3 = TRUE,
-    backward_complexo_4 = FALSE,
+    forward_simples = TRUE,
+    forward_duplo = TRUE,
+    combinacao = TRUE,
+    forward_triplo = TRUE,
+    check_transformacao = TRUE,
+    backward_simples = TRUE,
+    backward_complexo = TRUE,
     n_best_duplo = 3,
+    n_best_combinacao = 2,
     n_best_triplo_1 = 2,
     n_best_triplo_2 = 2,
     complexidade_maxima = 999
@@ -93,8 +92,105 @@ Pedro_Wise_4 <- function(
   modelo_melhorado <- TRUE
   elegiveis_iniciais <- elegiveis_iniciais
   nivel <- 1
+  melhor_modelo_global <- modelo
+  treino <- treino[,c("y",elegiveis_iniciais)]
   
-  
+  if(!is.null(teste)){
+    teste <- teste[,c("y",elegiveis_iniciais)]
+  }
+    
+  while (modelo_melhorado){
+    
+    complexidade_atual <- length(get_vars(melhor_modelo_global))
+    if (complexidade_atual >= complexidade_maxima){
+      
+      cat("\n Modelo atingiu a complexidade máxima \n")
+      
+      return(melhor_modelo_global)
+    }
+    
+    if (nivel == 1){
+      modelo_melhorado < -FALSE
+      
+      if (forward_simples){
+        
+      }
+      
+      if (check_transformacao){
+        
+      }
+      
+      if (backward_simples){
+        
+      }
+      
+    }
+    
+    if (nivel == 2){
+      
+      if (forward_duplo){
+        
+      }
+      
+      if (check_transformacao){
+        
+      }
+      
+      if (backward_simples){
+        
+      }
+      
+    }
+    
+    if (nivel == 3){
+      
+      if (combinacao){
+        
+      }
+      
+      if (check_transformacao){
+        
+      }
+      
+      if (backward_simples){
+        
+      }
+      
+    }
+    
+    if (nivel == 4){
+      
+      if (forward_triplo){
+        
+      }
+      
+      if (check_transformacao){
+        
+      }
+      
+      if (backward_simples){
+        
+      }
+      
+    }
+    
+    if (nível == 5){
+      if(backward_complexo){
+        
+        
+      }
+    
+      
+      }
+    
+    
+    
+    
+    
+    
+    return(melhor_modelo_global)
+    
+  }
   
   }
 
